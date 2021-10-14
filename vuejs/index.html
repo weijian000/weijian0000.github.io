@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Examples</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <h1>VueJS Examples</h1>
+
+    <div id="app1">
+        {{ message }}
+        <br>
+        <span v-bind:title="message2">Hover your mouse here and wait a few seconds to see the title!</span>
+        <br>
+        <a v-bind:href="linkUrl" target="_blank">{{ linkText }}</a>
+        <br>
+        <span v-if="showIt">You can toggle this message</span>
+        <br>
+        <button type="submit" v-on:click="toggleMsg">Toggle the message</button>
+        <br>
+        <label for="modelExample">Start typing: </label>
+        <input type="text" v-model="message">
+        <ol>
+            <li v-for="todo in theList">
+                {{ todo.text }}
+            </li>
+        </ol>
+
+        <ol>
+            <grocery-list v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></grocery-list>
+        </ol>
+
+
+        <ol>
+            <grocery-list v-for="item in orderList" v-bind:todo="item" v-bind:key="item.id"></grocery-list>
+        </ol>
+    </div>
+
+    <script src="js/grocery-list.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
