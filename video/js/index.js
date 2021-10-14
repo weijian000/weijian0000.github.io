@@ -30,6 +30,6 @@ video.addEventListener("timeupdate",function(){
 })
 
 let volumeControl = document.getElementById("volume")
-volumeControl.addEventListener("change",function{
+volumeControl.addEventListener("change",function(){
     video.volume=volumeControl
 })
