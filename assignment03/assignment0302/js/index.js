@@ -11,7 +11,7 @@ function palindrome(number) {
         return "A"
     }
     else {
-        return "B"
+        return "NOT"
     }
     
 }
