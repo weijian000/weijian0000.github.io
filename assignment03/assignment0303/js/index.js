@@ -1,15 +1,15 @@
 let elcalculateVowel = document.getElementById("calculateVowel")
-elcalculateVowel.addEventListener("click", function () {
-    let elVowel = document.getElementById("vowel")
-    let elresultVowel = document.getElementById("resultVowel")
+let elVowel = document.getElementById("vowel")
+let elresultVowel = document.getElementById("resultVowel")
+elcalculateVowel.addEventListener("click", function () {    
     elresultVowel.innerHTML = "answer is" + Vowels(elVowel.value)
 })
 
 function Vowels(){
     let counts = 0
-    let lengths = document.getElementById("vowel").length
+    let lengths = length(document.getElementById("vowel").value)
     for (let i = 0; i<lengths; i++)
-        if (elVowel.charAt(i)=="a"|elVowel.charAt(i)=='e'|elVowel.charAt(i)=='i'|elVowel.charAt(i)=='o'|elVowel.charAt(i)=='u'|elVowel.charAt(i)=='A'|elVowel.charAt(i)=='E'|elVowel.charAt(i)=='I'|elVowel.charAt(i)=='O'|elVowel.charAt(i)=='U') {
+        if (elVowel.value.charAt(i)=="a"|elVowel.value.charAt(i)=='e'|elVowel.value.charAt(i)=='i'|elVowel.value.charAt(i)=='o'|elVowel.value.charAt(i)=='u'|elVowel.value.charAt(i)=='A'|elVowel..value.charAt(i)=='E'|elVowel.value.charAt(i)=='I'|elVowel.value.charAt(i)=='O'|elVowel.value.charAt(i)=='U') {
             counts++
         }
     return counts
