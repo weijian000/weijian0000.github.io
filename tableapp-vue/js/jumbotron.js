@@ -5,11 +5,23 @@ Vue.component("jumbotron", {
             <div class="jumbotron">
                 <h1 class="display-4">{{page.mainTitle}}</h1>
                 <p class="lead">{{page.subTitle}}</p>
-                <hr class="my-4">
-                <a class="btn btn-primary btn-lg" v-bind:href="page.buttonUrl" role="button">{{page.buttonText}}</a>
+                <hr v-if="showButton" class="my-4">
+                <a  v-if="showButton" class="btn btn-primary btn-lg" v-bind:href="page.buttonUrl" role="button">{{page.buttonText}}</a>
             </div>
         </div>
     </div>
     `,
-    props:["page"]
+    props:["page"],
+    data: function () {
+        return {
+            showButton: false
+        }
+    },
+    created: function () {
+        if(this.page.buttonUrl == undefined){
+            this.showButton = false
+        } else {
+            this.showButton = true
+        }
+    }
 })
