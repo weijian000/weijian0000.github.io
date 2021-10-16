@@ -10,6 +10,10 @@ let app =  new Vue({
         pageBook: {
             mainTitle: "Yess..you are here!",
             subTitle: "Tell us your plan and we will call you"
+        },
+        pageList: {
+            mainTitle:"Here is our booking list!",
+            subTitle: "Call them to confirm"
         }
     }
 })
